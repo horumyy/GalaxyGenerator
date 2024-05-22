@@ -8,7 +8,7 @@ import * as dat from "lil-gui";
  */
 // Debug
 const gui = new dat.GUI();
-
+gui.hide()
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
 
@@ -71,7 +71,7 @@ const generateGalaxy = () => {
 
     // Colors
     const mixedColor = colorInside.clone();
-    mixedColor.lerp(colorOutside, radius/parameters.radius);
+    mixedColor.lerp(colorOutside, radius / parameters.radius);
 
     colors[i3 + 0] = mixedColor.r;
     colors[i3 + 1] = mixedColor.g;
@@ -201,8 +201,6 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-
 
 /**
  * Animate
